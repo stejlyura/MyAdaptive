@@ -1,8 +1,12 @@
+@use './_fonts';
+@use './_variables';
+
 header {
-    background-color: white;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    font-family: 'OpenSans';
+    font-size: 1rem;
 
     ul{
         display: flex;
@@ -11,7 +15,39 @@ header {
         li{
             word-break: break-all;
             list-style: none;
-            margin: 10px;
+
+            &.active{
+                color: variables.$active;
+            }
+
+            &:not(:last-child){
+                margin-right: 20px;
+            }
+
+            button{
+                width: 9rem;
+                height: 100%;
+            }
+
+            .cart-element{
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                    svg{
+                        cursor: pointer;
+                    }
+
+                    .cart-size{
+                        font-size: 0.5rem;
+                        top: -6px;
+                        left: 16px;
+                        position: absolute;
+                        z-index: 10;
+                        background-color: red;
+                    }
+            }
         }
     }
 }

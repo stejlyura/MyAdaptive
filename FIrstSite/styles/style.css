@@ -289,6 +289,11 @@ details {
   display: block;
 }
 
+li {
+  padding: 0;
+  margin: 0;
+}
+
 /*
  * Add the correct display in all browsers.
  */
@@ -312,11 +317,26 @@ template {
   display: none;
 }
 
+@font-face {
+  font-family: "OpenSans";
+  src: url(../fonts/open-sans/OpenSans.ttf);
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-color: rgb(247, 243, 240);
+}
+
 header {
-  background-color: white;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  font-family: "OpenSans";
+  font-size: 1rem;
 }
 header ul {
   display: flex;
@@ -325,5 +345,31 @@ header ul {
 header ul li {
   word-break: break-all;
   list-style: none;
-  margin: 10px;
+}
+header ul li.active {
+  color: rgb(199, 72, 23);
+}
+header ul li:not(:last-child) {
+  margin-right: 20px;
+}
+header ul li button {
+  width: 9rem;
+  height: 100%;
+}
+header ul li .cart-element {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header ul li .cart-element svg {
+  cursor: pointer;
+}
+header ul li .cart-element .cart-size {
+  font-size: 0.5rem;
+  top: -6px;
+  left: 16px;
+  position: absolute;
+  z-index: 10;
+  background-color: red;
 }/*# sourceMappingURL=style.css.map */
